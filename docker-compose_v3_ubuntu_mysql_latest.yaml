@@ -407,6 +407,8 @@ services:
 
  mysql-server:
   image: mysql:8.0
+  cap_add: 
+    - SYS_NICE  # CAP_SYS_NICE
   command:
    - mysqld
    - --character-set-server=utf8mb4
