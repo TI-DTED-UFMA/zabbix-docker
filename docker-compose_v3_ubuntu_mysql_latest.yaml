@@ -463,7 +463,7 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: 172.16.238.0/24
+      - subnet: 172.33.238.0/24
   zbx_net_backend:
     driver: bridge
     driver_opts:
@@ -472,7 +472,7 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: 172.16.239.0/24
+      - subnet: 172.33.239.0/24
 
 volumes:
   snmptraps:
