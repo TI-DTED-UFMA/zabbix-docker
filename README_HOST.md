@@ -41,4 +41,5 @@ Hostname=Server-XXX
 ```
 sudo systemctl restart zabbix-agent
 sudo systemctl status zabbix-agent
+sudo systemctl enable zabbix-agent
 ```
