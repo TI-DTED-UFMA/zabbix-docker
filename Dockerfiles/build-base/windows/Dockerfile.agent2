@@ -6,12 +6,12 @@ FROM $BUILD_BASE_IMAGE as builder_base
 ARG PCRE2_VERSION=10.39
 ARG OPENSSL_VERSION=1.1.1n
 ARG GOLANG_VERSION=1.17.6
-ARG SEVEN_ZIP_VERSION=1900
+ARG SEVEN_ZIP_VERSION=2107
 ARG BUILD_ARCH=x64
 ARG CPU_MODEL=AMD64
 
 ARG MAJOR_VERSION=6.0
-ARG ZBX_VERSION=${MAJOR_VERSION}.2
+ARG ZBX_VERSION=${MAJOR_VERSION}.3
 
 ARG VS_BUILDTOOLS_URL=https://aka.ms/vs/16/release/vs_buildtools.exe
 ARG GIT_URL=https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.2/MinGit-2.33.0.2-busybox-64-bit.zip
@@ -90,7 +90,7 @@ RUN Set-Location -Path $env:SystemDrive\.; `
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
     Invoke-WebRequest -OutFile $env:SystemDrive\7z.msi -Uri $env:SEVEN_ZIP_URL; `
     `
-    $sha256 = 'a7803233eedb6a4b59b3024ccf9292a6fffb94507dc998aa67c5b745d197a5dc'; `
+    $sha256 = '5447C9AC39C48F1BC7C88359B0520396A8C9707B307C107236A93A68E6FD3EB6'; `
     Write-Host ('Verifying SHA256 ({0}) ...' -f $sha256); `
     if ((Get-FileHash $env:SystemDrive\7z.msi -Algorithm sha256).Hash -ne $sha256) { `
         Write-Host 'Checksum 7-zip failed!'; `
